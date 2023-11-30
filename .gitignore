@@ -126,6 +126,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# Ignore token files
 token.json
-token1.json
 credentials.json
+token1.json
