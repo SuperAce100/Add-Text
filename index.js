@@ -13,7 +13,7 @@ let finishVideo = () => {
   // console.log(filters);
   // console.log(lastOutput);
   video
-    .addOption('-vf', 'scale=1080:-1')
+    .addOption("-vf", "scale=1080:-1")
     .complexFilter(filters, lastOutput)
     .output("output.mp4")
     .on("error", function (er) {
@@ -23,7 +23,7 @@ let finishVideo = () => {
       console.log("Video Complete");
     })
     .on("start", function (commandLine) {
-      console.log('Spawned ffmpeg with command: \n' + commandLine);
+      console.log("Spawned ffmpeg with command: \n" + commandLine);
     })
     .run();
 };
@@ -51,11 +51,7 @@ fs.readFile("credentials.json", (err, content) => {
 function authorize(credentials, callback) {
   // eslint-disable-next-line camelcase
   const { client_secret, client_id, redirect_uris } = credentials.installed;
-  const oAuth2Client = new google.auth.OAuth2(
-    client_id,
-    client_secret,
-    redirect_uris[0]
-  );
+  const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_uris[0]);
 
   // Check if we have previously stored a token.
   fs.readFile(TOKEN_PATH, (err, token) => {
@@ -85,10 +81,7 @@ function getNewToken(oAuth2Client, callback) {
     rl.close();
     oAuth2Client.getToken(code, (err, token) => {
       if (err) {
-        return console.error(
-          "Error while trying to retrieve access token",
-          err
-        );
+        return console.error("Error while trying to retrieve access token", err);
       }
       oAuth2Client.setCredentials(token);
       // Store the token to disk for later program executions

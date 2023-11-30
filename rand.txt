@@ -1,9 +1,0 @@
-X:
-left: margin,
-center: width/2
-right: width-margin
-
-Y: 
-top: margin,
-center: height/2
-bottom: height-margin
