@@ -1,0 +1,31 @@
+{
+  "editor.formatOnSave": true,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "beautify.tabSize": 2,
+  "window.zoomLevel": 0,
+  "git.autofetch": true,
+  "explorer.confirmDragAndDrop": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabSize": 2,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDelete": false,
+  "prettier.arrowParens": "avoid",
+  "prettier.trailingComma": "none",
+  "editor.codeActionsOnSave": null,
+  "macros": {
+    "nodeRun": [
+      "workbench.action.files.saveAll",
+      // a simple command to open a new terminal
+      "workbench.action.terminal.focus",
+      // a command with arguments, that sends text to the terminal
+      {
+        "command": "workbench.action.terminal.sendSequence",
+        "args": { "text": "node .\n" }
+      }
+      // "cursorEnd",
+      // { "command": "type", "args": { "text": "\n" } }
+    ]
+  }
+}
